@@ -20,11 +20,11 @@ module.exports = {
   },
   mode: 'production',
   plugins: [new HtmlWebpackPlugin({
-      template: './src/index.html',
-      inject: true,
-      filename: 'index.html'
-    })],
-    module: {
+    template: './src/index.html',
+    inject: true,
+    filename: 'index.html'
+  })],
+  module: {
     rules: [
       {
         test: /\.css$/i,
