@@ -19,5 +19,10 @@ module.exports = {
     filename: 'index_bundle.js',
   },
   mode: 'production',
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin({
+      template: './index.html',
+      inject: true,
+      chunks: ['index'],
+      filename: 'index.html'
+    })],
 };
