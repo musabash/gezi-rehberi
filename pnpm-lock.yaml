@@ -14,6 +14,9 @@ dependencies:
   follow-redirects:
     specifier: ^1.15.6
     version: 1.15.6
+  form-data:
+    specifier: ^4.0.0
+    version: 4.0.0
   webpack:
     specifier: ^5.0.0
     version: 5.92.1(webpack-cli@4.10.0)
