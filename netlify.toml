@@ -1,7 +1,3 @@
-[build]
-  functions = "functions"
-  publish = "dist"
-
 [[redirects]]
   from = "/data"
   to = "/.netlify/functions/get-data"
