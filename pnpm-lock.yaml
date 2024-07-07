@@ -11,6 +11,9 @@ dependencies:
   dotenv:
     specifier: ^16.4.5
     version: 16.4.5
+  follow-redirects:
+    specifier: ^1.15.6
+    version: 1.15.6
   webpack:
     specifier: ^5.0.0
     version: 5.92.1(webpack-cli@4.10.0)
