@@ -11,6 +11,9 @@ dependencies:
   axios:
     specifier: ^1.7.2
     version: 1.7.2
+  combined-stream:
+    specifier: ^1.0.8
+    version: 1.0.8
   dotenv:
     specifier: ^16.4.5
     version: 16.4.5
