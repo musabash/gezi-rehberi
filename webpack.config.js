@@ -13,16 +13,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: 'src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'index_bundle.js',
   },
   mode: 'production',
   plugins: [new HtmlWebpackPlugin({
-      template: './index.html',
+      template: 'src/index.html',
       inject: true,
-      chunks: ['index'],
-      filename: 'index.html'
+      filename: 'src/index.html'
     })],
 };
