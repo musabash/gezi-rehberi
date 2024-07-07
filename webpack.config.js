@@ -20,8 +20,8 @@ module.exports = {
   },
   mode: 'production',
   plugins: [new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: './src/index.html',
       inject: true,
-      filename: 'src/index.html'
+      filename: './src/index.html'
     })],
 };
