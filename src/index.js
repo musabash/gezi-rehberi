@@ -18,10 +18,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const tabButtons = document.querySelectorAll('.tab-button');
   const tabContent = document.getElementById('tab-content');
+  const tabSelect = document.getElementById('places');
+
+  tabSelect.addEventListener('change', async (e) => {
+    const category = e.target.value;
+    tabButtons.forEach(btn => {
+      console.log({ category, data: btn.getAttribute('data-tab') });
+      btn.getAttribute('data-tab') === category ?
+        btn.classList.add('active') :
+        btn.classList.remove('active');
+    });
+
+    const values = await fetchData();
+    if (values) {
+      const filteredData = values.filter(row => row[0] === category);
+      renderTabContent(filteredData);
+    }
+  });
 
   tabButtons.forEach(button => {
     button.addEventListener('click', async () => {
       const category = button.getAttribute('data-tab');
+      tabSelect.value = category;
 
       tabButtons.forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
