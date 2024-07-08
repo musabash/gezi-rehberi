@@ -1,4 +1,4 @@
-import "./styles.css"
+import "./styles.css";
 
 document.addEventListener('DOMContentLoaded', () => {
   const fetchData = async () => {
@@ -37,14 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderTabContent = (items) => {
     tabContent.innerHTML = '';
     items.forEach(item => {
+      if (!item[1]) return;
       const card = document.createElement('div');
       card.className = 'card';
+      const link = item[3] ? `<a href="${item[3]}" target="_blank">Daha fazla bilgi</a>` : '';
       card.innerHTML = `
-                <h2>${item[1]}</h2>
-                <p><strong>Adres:</strong> ${item[2]}</p>
-                <p><strong>Kısa Bilgi:</strong> ${item[4]}</p>
-                <p><strong>Açıklama:</strong> ${item[5]}</p>
-                <a href="${item[3]}" target="_blank">Daha fazla bilgi</a>
+                <h2>${item[1] ?? ''}</h2>
+                <p><strong>Adres:</strong> ${item[2] ?? ''}</p>
+                <p><strong>Kısa Bilgi:</strong> ${item[4] ?? ''}</p>
+                <p><strong>Açıklama:</strong> ${item[5] ?? ''}</p>
+                ${link}
             `;
       tabContent.appendChild(card);
     });
