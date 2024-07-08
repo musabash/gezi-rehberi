@@ -4,20 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gezi Rehberi</title>
+  <title>Summit - Gezi Rehberi</title>
 </head>
 
 <body>
   <div class="container">
-    <h1>Gezi Rehberi</h1>
-    <div class="tabs">
-      <button class="tab-button" data-tab="Parklar">Parklar</button>
-      <button class="tab-button" data-tab="Alis-veris mekanlari">Alışveriş Mekanları</button>
-      <button class="tab-button" data-tab="Muze">Müzeler</button>
-      <button class="tab-button" data-tab="Restoran/Kafe">Restoran/Kafe</button>
-      <button class="tab-button" data-tab="Farm/outdoor oyun alanlari">Farm/Outdoor Oyun Alanları</button>
+    <div class="tabs-container">
+      <h1 class="title">Gezi Rehberi</h1>
+      <div class="tabs">
+        <button class="tab-button" data-tab="Parklar" title="Parklar">Park</button>
+        <button class="tab-button" data-tab="Alis-veris mekanlari" title="Alışveriş mekanları">Alışveriş</button>
+        <button class="tab-button" data-tab="Muze" title="Müzeler">Müze</button>
+        <button class="tab-button" data-tab="Restoran/Kafe" title="Restoranlar ve kafeler">Yemek</button>
+        <button class="tab-button" data-tab="Farm/outdoor oyun alanlari"
+          title="Çiftlikler ve açık hava oyun alanları">Oyun/Çiftlik</button>
+      </div>
     </div>
-    <div id="tab-content"></div>
+    <div class="content-container">
+      <div id="tab-content"></div>
+    </div>
   </div>
 </body>
 

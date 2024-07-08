@@ -1,18 +1,16 @@
 const https = require('https');
+require('dotenv').config();
 
 exports.handler = async (event, context) => {
   try {
-    // Construct the API endpoint URL
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/${process.env.RANGE}?key=${process.env.API_KEY}`;
 
-    // Define request options
     const options = {
       hostname: 'sheets.googleapis.com',
       path: `/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/${process.env.RANGE}?key=${process.env.API_KEY}`,
       method: 'GET',
     };
 
-    // Make the request
     const promise = new Promise((resolve, reject) => {
       const req = https.request(options, (res) => {
         let data = '';
@@ -35,7 +33,6 @@ exports.handler = async (event, context) => {
       req.end();
     });
 
-    // Handle response or error
     const response = await promise;
     return {
       statusCode: 200,
