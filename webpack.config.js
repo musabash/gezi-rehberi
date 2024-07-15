@@ -1,15 +1,5 @@
-// const path = require('path');
-
-// module.exports = {
-//   entry: 'index.js',
-//   output: {
-//     filename: 'bundle.js',
-//     path: path.resolve(__dirname, 'dist')
-//   },
-//   mode: 'production'
-// };
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 module.exports = {
@@ -19,16 +9,21 @@ module.exports = {
     filename: 'index_bundle.js',
   },
   mode: 'production',
-  plugins: [new HtmlWebpackPlugin({
-    template: './src/index.html',
-    inject: true,
-    filename: 'index.html'
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      inject: 'body',
+      filename: 'index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    })
+  ],
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
   },

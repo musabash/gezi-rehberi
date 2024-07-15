@@ -40,15 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', async () => {
       const category = button.getAttribute('data-tab');
       tabSelect.value = category;
-
+      
       tabButtons.forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
-
+      
       const values = await fetchData();
       if (values) {
         const filteredData = values.filter(row => row[0] === category);
         renderTabContent(filteredData);
       }
+      window.scrollTo(0,0)
     });
   });
 
@@ -60,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.className = 'card';
       const link = item[3] ? `<a href="${item[3]}" target="_blank">Daha fazla bilgi</a>` : '';
       card.innerHTML = `
-                <h2>${item[1] ?? ''}</h2>
+                <h3>${item[1] ?? ''}</h3>
                 <p><strong>Adres:</strong> ${item[2] ?? ''}</p>
                 <p><strong>Kısa Bilgi:</strong> ${item[4] ?? ''}</p>
                 <p><strong>Açıklama:</strong> ${item[5] ?? ''}</p>
