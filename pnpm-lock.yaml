@@ -25,9 +25,6 @@ devDependencies:
   mini-css-extract-plugin:
     specifier: ^2.9.0
     version: 2.9.0(webpack@5.92.1)
-  style-loader:
-    specifier: ^4.0.0
-    version: 4.0.0(webpack@5.92.1)
 
 packages:
 
@@ -951,15 +948,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       ansi-regex: 5.0.1
-    dev: true
-
-  /style-loader@4.0.0(webpack@5.92.1):
-    resolution: {integrity: sha512-1V4WqhhZZgjVAVJyt7TdDPZoPBPNHbekX4fWnCJL1yQukhCeZhJySUL+gL9y6sNdN95uEOS83Y55SqHcP7MzLA==}
-    engines: {node: '>= 18.12.0'}
-    peerDependencies:
-      webpack: ^5.27.0
-    dependencies:
-      webpack: 5.92.1(webpack-cli@4.10.0)
     dev: true
 
   /supports-color@8.1.1:
