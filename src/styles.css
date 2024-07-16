@@ -1,18 +1,29 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1100px;
   margin: auto;
 }
 
 .tabs-container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-bottom: whitesmoke solid 1px;
   background: white;
   position: fixed;
@@ -23,9 +34,16 @@ body {
 }
 
 .content-container {
-  width: 100%;
-  margin: auto 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   padding: 200px 1em 1em;
+}
+
+#tab-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .title {
@@ -35,17 +53,18 @@ body {
 }
 
 .tabs {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3em;
-  width: 100%;
+  width: max-content;
   padding: 0.25em;
-  margin: 5px 0px;
+  margin: auto 0;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.4em;
 }
 
 .tab-button {
-  padding: 10px 20px;
+  padding: 0.7em 1.4em;
   cursor: pointer;
   border: #7387b9 solid 1px;
   background-color: rgb(255, 255, 255);
@@ -69,15 +88,16 @@ body {
 .custom-select {
   color: #000;
   padding: 0.25em;
-  margin-right: 1em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   color: #fcfcfc;
   display: none;
 }
 
 select {
   width: 300px;
-  margin: auto;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   background-color: #8593b7;
   color: whitesmoke;
   padding: 0.675em 6em 0.675em 1em;
@@ -86,15 +106,12 @@ select {
   cursor: pointer;
 }
 
-select option {
-  line-height: 1rem;
-}
-
 .card {
   border: 1px solid #f1f1f1;
   padding: 20px;
+  max-width: 80%;
+  min-width: 80%;
   margin-bottom: 20px;
-  margin-right: 1em;
   border-radius: 8px;
   background: #dbdbdb;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -102,6 +119,7 @@ select option {
 
 .card h3 {
   margin-top: 0;
+  text-align: center;
 }
 
 .error {
@@ -121,5 +139,14 @@ select option {
 
   .tabs {
     display: none;
+  }
+}
+
+@media (min-width: 1055px) {
+  .tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
   }
 }

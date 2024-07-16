@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
   tabSelect.addEventListener('change', async (e) => {
     const category = e.target.value;
     tabButtons.forEach(btn => {
-      console.log({ category, data: btn.getAttribute('data-tab') });
       btn.getAttribute('data-tab') === category ?
         btn.classList.add('active') :
         btn.classList.remove('active');
@@ -34,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const filteredData = values.filter(row => row[0] === category);
       renderTabContent(filteredData);
     }
+    window.scrollTo(0,0)
   });
 
   tabButtons.forEach(button => {
