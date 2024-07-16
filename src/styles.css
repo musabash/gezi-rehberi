@@ -129,7 +129,7 @@ select {
   margin-top: 20px;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 580px) {
   .custom-select {
     display: flex;
     align-items: center;
